@@ -40,10 +40,6 @@ public class ConverterService {
     public static boolean checkStatus(Roach roach) {
         System.out.println("Энергия: " + roach.getEnergy() + " Здоровье: " + roach.getHealth());
         System.out.println();
-        if (roach.getHealth() <= 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return roach.getHealth() > 0;
     }
 }

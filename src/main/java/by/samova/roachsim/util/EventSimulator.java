@@ -3,11 +3,9 @@ package by.samova.roachsim.util;
 import by.samova.roachsim.entity.Roach;
 import by.samova.roachsim.service.ConverterService;
 
-import static java.lang.Thread.sleep;
-
 public class EventSimulator {
 
-    public void startSimulation(Roach roach) {
+    public void startSimulation(Roach roach) throws InterruptedException {
         while (ConverterService.checkStatus(roach)) {
             int eventNumber = (int) (Math.random() * 100);
             if (eventNumber >= 0 && eventNumber < 10) {
@@ -31,11 +29,7 @@ public class EventSimulator {
             } else if (eventNumber >= 90 && eventNumber < 100) {
                 searchFood(roach);
             }
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            Thread.sleep(1000);
         }
         System.out.println("Наконец-то! Таракан умер! The end!");
     }
