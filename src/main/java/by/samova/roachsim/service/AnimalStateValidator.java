@@ -2,7 +2,7 @@ package by.samova.roachsim.service;
 
 import by.samova.roachsim.entity.Roach;
 
-public class ConverterService {
+public class AnimalStateValidator {
 
     public static void checkEnergy(Roach roach) {
         int energy = roach.getEnergy();

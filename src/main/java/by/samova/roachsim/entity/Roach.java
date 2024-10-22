@@ -10,7 +10,7 @@ public class Roach {
     }
 
     public int getHealth() {
-        return this.health;
+        return health;
     }
 
     public void setEnergy(int energy) {
@@ -18,10 +18,10 @@ public class Roach {
     }
 
     public int getEnergy() {
-        return this.energy;
+        return energy;
     }
 
     public double getPAWS() {
-        return this.PAWS;
+        return PAWS;
     }
 }

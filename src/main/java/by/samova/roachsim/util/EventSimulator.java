@@ -1,12 +1,12 @@
 package by.samova.roachsim.util;
 
 import by.samova.roachsim.entity.Roach;
-import by.samova.roachsim.service.ConverterService;
+import by.samova.roachsim.service.AnimalStateValidator;
 
 public class EventSimulator {
 
     public void startSimulation(Roach roach) throws InterruptedException {
-        while (ConverterService.checkStatus(roach)) {
+        while (AnimalStateValidator.checkStatus(roach)) {
             int eventNumber = (int) (Math.random() * 100);
             if (eventNumber >= 0 && eventNumber < 10) {
                 sleepEvent(roach);
@@ -42,8 +42,8 @@ public class EventSimulator {
         health = health + (int) (roach.getPAWS() * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("Таракан поспал в укрытии... +30 энергии +30 здоровья");
     }
 
@@ -55,8 +55,8 @@ public class EventSimulator {
         health = health + (int) (roach.getPAWS() * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("Таракан съел крошки) +30 энергии +30 здоровья");
     }
 
@@ -68,8 +68,8 @@ public class EventSimulator {
         health = health + (int) (roach.getPAWS() * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("Таракан попил воды) +30 энергии +30 здоровья");
     }
 
@@ -78,9 +78,9 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         energy = energy - 20;
         roach.setEnergy(energy);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
-        ConverterService.checkHealthForEnergy(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
+        AnimalStateValidator.checkHealthForEnergy(roach);
         System.out.println("Таракан бежал от включённого света! -20 энергии");
     }
 
@@ -92,9 +92,9 @@ public class EventSimulator {
         health = health - (int) (roach.getPAWS() * 2);
         roach.setEnergy(energy);
         roach.setHealth(health);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
-        ConverterService.checkHealthForEnergy(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
+        AnimalStateValidator.checkHealthForEnergy(roach);
         System.out.println("Таракан убегал от человека! -25 энергии -5 здоровья");
     }
 
@@ -106,9 +106,9 @@ public class EventSimulator {
         health = health - (int) (roach.getPAWS() * 2);
         roach.setEnergy(energy);
         roach.setHealth(health);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
-        ConverterService.checkHealthForEnergy(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
+        AnimalStateValidator.checkHealthForEnergy(roach);
         System.out.println("Таракан убегал от кота! -25 энергии -5 здоровья");
     }
 
@@ -117,7 +117,7 @@ public class EventSimulator {
         int health = roach.getHealth();
         health = health - (int) (roach.getPAWS() * 10);
         roach.setHealth(health);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("Человек ударил таракана тапком! -25 здоровья");
     }
 
@@ -126,7 +126,7 @@ public class EventSimulator {
         int health = roach.getHealth();
         health = health - (int) (roach.getPAWS() * 10);
         roach.setHealth(health);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("На таракана напал кот! -25 здоровья");
     }
 
@@ -135,7 +135,7 @@ public class EventSimulator {
         int health = roach.getHealth();
         health = health - (int) (roach.getPAWS() * 10);
         roach.setHealth(health);
-        ConverterService.checkHealth(roach);
+        AnimalStateValidator.checkHealth(roach);
         System.out.println("Таракан съел отраву( -25 здоровья");
     }
 
@@ -144,9 +144,9 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         energy = energy - 10;
         roach.setEnergy(energy);
-        ConverterService.checkEnergy(roach);
-        ConverterService.checkHealth(roach);
-        ConverterService.checkHealthForEnergy(roach);
+        AnimalStateValidator.checkEnergy(roach);
+        AnimalStateValidator.checkHealth(roach);
+        AnimalStateValidator.checkHealthForEnergy(roach);
         System.out.println("Таракан искал еду... -10 энергии");
     }
 }
