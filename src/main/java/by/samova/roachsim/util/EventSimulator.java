@@ -39,7 +39,7 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         int health = roach.getHealth();
         energy = energy + 30;
-        health = health + (int) (roach.getPAWS() * 12);
+        health = health + (int) (roach.PAWS * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
         AnimalStateValidator.checkEnergy(roach);
@@ -52,7 +52,7 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         int health = roach.getHealth();
         energy = energy + 30;
-        health = health + (int) (roach.getPAWS() * 12);
+        health = health + (int) (roach.PAWS * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
         AnimalStateValidator.checkEnergy(roach);
@@ -65,7 +65,7 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         int health = roach.getHealth();
         energy = energy + 30;
-        health = health + (int) (roach.getPAWS() * 12);
+        health = health + (int) (roach.PAWS * 12);
         roach.setEnergy(energy);
         roach.setHealth(health);
         AnimalStateValidator.checkEnergy(roach);
@@ -89,7 +89,7 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         int health = roach.getHealth();
         energy = energy - 25;
-        health = health - (int) (roach.getPAWS() * 2);
+        health = health - (int) (roach.PAWS * 2);
         roach.setEnergy(energy);
         roach.setHealth(health);
         AnimalStateValidator.checkEnergy(roach);
@@ -103,7 +103,7 @@ public class EventSimulator {
         int energy = roach.getEnergy();
         int health = roach.getHealth();
         energy = energy - 25;
-        health = health - (int) (roach.getPAWS() * 2);
+        health = health - (int) (roach.PAWS * 2);
         roach.setEnergy(energy);
         roach.setHealth(health);
         AnimalStateValidator.checkEnergy(roach);
@@ -115,7 +115,7 @@ public class EventSimulator {
     // 7. Человек ударил таракана тапком! -25 здоровья
     private void slipperSlam(Roach roach) {
         int health = roach.getHealth();
-        health = health - (int) (roach.getPAWS() * 10);
+        health = health - (int) (roach.PAWS * 10);
         roach.setHealth(health);
         AnimalStateValidator.checkHealth(roach);
         System.out.println("Человек ударил таракана тапком! -25 здоровья");
@@ -124,7 +124,7 @@ public class EventSimulator {
     // 8. На таракана напал кот! -25 здоровья
     private void attackCat(Roach roach) {
         int health = roach.getHealth();
-        health = health - (int) (roach.getPAWS() * 10);
+        health = health - (int) (roach.PAWS * 10);
         roach.setHealth(health);
         AnimalStateValidator.checkHealth(roach);
         System.out.println("На таракана напал кот! -25 здоровья");
@@ -133,7 +133,7 @@ public class EventSimulator {
     // 9. Таракан съел отраву( -25 здоровья
     private void eatPoison(Roach roach) {
         int health = roach.getHealth();
-        health = health - (int) (roach.getPAWS() * 10);
+        health = health - (int) (roach.PAWS * 10);
         roach.setHealth(health);
         AnimalStateValidator.checkHealth(roach);
         System.out.println("Таракан съел отраву( -25 здоровья");

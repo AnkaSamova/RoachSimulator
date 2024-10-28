@@ -8,8 +8,7 @@ public class AnimalStateValidator {
         int energy = roach.getEnergy();
         if (energy > 100) {
             energy = 100;
-        }
-        if (energy < 0) {
+        } else if (energy < 0) {
             energy = 0;
         }
         roach.setEnergy(energy);
@@ -19,8 +18,7 @@ public class AnimalStateValidator {
         int health = roach.getHealth();
         if (health > 100) {
             health = 100;
-        }
-        if (health < 0) {
+        } else if (health < 0) {
             health = 0;
         }
         roach.setHealth(health);

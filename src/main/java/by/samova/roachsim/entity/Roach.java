@@ -3,7 +3,7 @@ package by.samova.roachsim.entity;
 public class Roach {
     private int health = 100;
     private int energy = 100;
-    private final double PAWS = 2.5;
+    public final double PAWS = 2.5;
 
     public void setHealth(int health) {
         this.health = health;
@@ -19,9 +19,5 @@ public class Roach {
 
     public int getEnergy() {
         return energy;
-    }
-
-    public double getPAWS() {
-        return PAWS;
     }
 }
